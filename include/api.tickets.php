@@ -150,9 +150,6 @@ class TicketApiController extends ApiController {
             $ticket=Ticket::lookup($id);
             $errors = array();
 
-            if (!$data['isAgent'])
-                return $this->exerr(400, __('Missing is agent parameter.'));
-
             # Checks if user or agent reply    
             if($data['isAgent'] == true){
                 if (!$data['staffUserName'])
